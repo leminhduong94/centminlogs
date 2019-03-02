@@ -1,0 +1,1093 @@
+centminmod_123.09beta01.b107_020319-051555_memcached_reinstall.log
+*************************************************
+[1;32;40m* Installing memcached
+(B[m*************************************************
+Downloading memcached...
+[1;33;40mCheck if mcperf-0.1.1.tar.gz exists
+(B[m[1;32;40mDownloading mcperf tarball..
+(B[m[1;33;40mDownload twemperf-0.1.1.tar.gz ...
+(B[m[1;32;40mtwemperf-0.1.1.tar.gz found, skipping download...
+(B[m[1;33;40mtwemperf-0.1.1.tar.gz valid file.
+(B[m
+[1;33;40mCheck if memcached-1.5.12.tar.gz exists
+(B[m[1;33;40mCheck if release-2.1.8-stable.tar.gz exists
+(B[m[1;33;40mCheck if memcached-2.2.0.tgz exists
+(B[mx86_64
+lib64
+test -z "test/rpcgen-attempted" || rm -f test/rpcgen-attempted
+test -z "libevent.la libevent_core.la libevent_extra.la libevent_pthreads.la libevent_openssl.la" || rm -f libevent.la libevent_core.la libevent_extra.la libevent_pthreads.la libevent_openssl.la
+rm -f ./so_locations
+rm -rf .libs _libs
+rm -rf sample/.libs sample/_libs
+rm -rf test/.libs test/_libs
+test -z "" || rm -f 
+ rm -f sample/dns-example sample/event-read-fifo sample/hello-world sample/http-server sample/http-connect sample/signal-test sample/time-test sample/le-proxy sample/https-client test/bench test/bench_cascade test/bench_http test/bench_httpclient test/test-changelist test/test-dumpevents test/test-eof test/test-closed test/test-fdleak test/test-init test/test-ratelim test/test-time test/test-weof test/regress
+rm -f *.o
+rm -f sample/*.o
+rm -f test/*.o
+test -z "test_runner_epoll.log test_runner_select.log test_runner_kqueue.log test_runner_evport.log test_runner_devpoll.log test_runner_poll.log test_runner_win32.log test_runner_timerfd.log test_runner_changelist.log test_runner_timerfd_changelist.log" || rm -f test_runner_epoll.log test_runner_select.log test_runner_kqueue.log test_runner_evport.log test_runner_devpoll.log test_runner_poll.log test_runner_win32.log test_runner_timerfd.log test_runner_changelist.log test_runner_timerfd_changelist.log
+test -z "test_runner_epoll.trs test_runner_select.trs test_runner_kqueue.trs test_runner_evport.trs test_runner_devpoll.trs test_runner_poll.trs test_runner_win32.trs test_runner_timerfd.trs test_runner_changelist.trs test_runner_timerfd_changelist.trs" || rm -f test_runner_epoll.trs test_runner_select.trs test_runner_kqueue.trs test_runner_evport.trs test_runner_devpoll.trs test_runner_poll.trs test_runner_win32.trs test_runner_timerfd.trs test_runner_changelist.trs test_runner_timerfd_changelist.trs
+test -z "test-suite.log" || rm -f test-suite.log
+rm -f *.lo
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in `.'.
+libtoolize: copying file `./ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIR, `m4'.
+libtoolize: copying file `m4/libtool.m4'
+libtoolize: copying file `m4/ltoptions.m4'
+libtoolize: copying file `m4/ltsugar.m4'
+libtoolize: copying file `m4/ltversion.m4'
+libtoolize: copying file `m4/lt~obsolete.m4'
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+autoreconf: Leaving directory `.'
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... ccache gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking dependency style of ccache gcc... gcc3
+checking how to run the C preprocessor... ccache gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking whether ccache gcc and cc understand -c and -o together... yes
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /bin/sed
+checking whether ccache gcc needs -traditional... no
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by ccache gcc... /bin/ld
+checking if the linker (/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from ccache gcc object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if ccache gcc supports -fno-rtti -fno-exceptions... no
+checking for ccache gcc option to produce PIC... -fPIC -DPIC
+checking if ccache gcc PIC flag -fPIC -DPIC works... yes
+checking if ccache gcc static flag -static works... no
+checking if ccache gcc supports -c -o file.o... yes
+checking if ccache gcc supports -c -o file.o... (cached) yes
+checking whether the ccache gcc linker (/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for library containing inet_ntoa... none required
+checking for library containing socket... none required
+checking for library containing inet_aton... none required
+checking for library containing clock_gettime... none required
+checking for clock_gettime... yes
+checking for library containing sendfile... none required
+checking for WIN32... no
+checking for CYGWIN... no
+checking zlib.h usability... yes
+checking zlib.h presence... yes
+checking for zlib.h... yes
+checking for library containing inflateEnd... -lz
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for pkg-config... /bin/pkg-config
+checking if pkg-config is at least version 0.15.0... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking ifaddrs.h usability... yes
+checking ifaddrs.h presence... yes
+checking for ifaddrs.h... yes
+checking mach/mach_time.h usability... no
+checking mach/mach_time.h presence... no
+checking for mach/mach_time.h... no
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking netinet/in6.h usability... no
+checking netinet/in6.h presence... no
+checking for netinet/in6.h... no
+checking netinet/tcp.h usability... yes
+checking netinet/tcp.h presence... yes
+checking for netinet/tcp.h... yes
+checking poll.h usability... yes
+checking poll.h presence... yes
+checking for poll.h... yes
+checking port.h usability... no
+checking port.h presence... no
+checking for port.h... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking sys/devpoll.h usability... no
+checking sys/devpoll.h presence... no
+checking for sys/devpoll.h... no
+checking sys/epoll.h usability... yes
+checking sys/epoll.h presence... yes
+checking for sys/epoll.h... yes
+checking sys/event.h usability... no
+checking sys/event.h presence... no
+checking for sys/event.h... no
+checking sys/eventfd.h usability... yes
+checking sys/eventfd.h presence... yes
+checking for sys/eventfd.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/queue.h usability... yes
+checking sys/queue.h presence... yes
+checking for sys/queue.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/sendfile.h usability... yes
+checking sys/sendfile.h presence... yes
+checking for sys/sendfile.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking for sys/stat.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/timerfd.h usability... yes
+checking sys/timerfd.h presence... yes
+checking for sys/timerfd.h... yes
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking for sys/sysctl.h... yes
+checking for TAILQ_FOREACH in sys/queue.h... yes
+checking for timeradd in sys/time.h... yes
+checking for timercmp in sys/time.h... yes
+checking for timerclear in sys/time.h... yes
+checking for timerisset in sys/time.h... yes
+checking whether CTL_KERN is declared... yes
+checking whether KERN_RANDOM is declared... yes
+checking whether RANDOM_UUID is declared... yes
+checking whether KERN_ARND is declared... no
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether time.h and sys/time.h may both be included... yes
+checking for accept4... yes
+checking for arc4random... no
+checking for arc4random_buf... no
+checking for eventfd... yes
+checking for epoll_create1... yes
+checking for fcntl... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getifaddrs... yes
+checking for getnameinfo... yes
+checking for getprotobynumber... yes
+checking for gettimeofday... yes
+checking for inet_ntop... yes
+checking for inet_pton... yes
+checking for issetugid... no
+checking for mach_absolute_time... no
+checking for mmap... yes
+checking for nanosleep... yes
+checking for pipe... yes
+checking for pipe2... yes
+checking for putenv... yes
+checking for sendfile... yes
+checking for setenv... yes
+checking for setrlimit... yes
+checking for sigaction... yes
+checking for signal... yes
+checking for splice... yes
+checking for strlcpy... no
+checking for strsep... yes
+checking for strtok_r... yes
+checking for strtoll... yes
+checking for sysctl... yes
+checking for timerfd_create... yes
+checking for umask... yes
+checking for unsetenv... yes
+checking for usleep... yes
+checking for vasprintf... yes
+checking for getservbyname... yes
+checking for getaddrinfo... yes
+checking for F_SETFD in fcntl.h... yes
+checking for select... yes
+checking for poll... yes
+checking for epoll_ctl... yes
+checking waitpid support WNOWAIT... no
+checking for port_create... no
+checking for pid_t... yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint64_t... yes
+checking for uint32_t... yes
+checking for uint16_t... yes
+checking for uint8_t... yes
+checking for uintptr_t... yes
+checking for fd_mask... yes
+checking size of long long... 8
+checking size of long... 8
+checking size of int... 4
+checking size of short... 2
+checking size of size_t... 8
+checking size of void *... 8
+checking size of off_t... 8
+checking for struct in6_addr... yes
+checking for struct sockaddr_in6... yes
+checking for sa_family_t... yes
+checking for struct addrinfo... yes
+checking for struct sockaddr_storage... yes
+checking for struct in6_addr.s6_addr32... yes
+checking for struct in6_addr.s6_addr16... yes
+checking for struct sockaddr_in.sin_len... no
+checking for struct sockaddr_in6.sin6_len... no
+checking for struct sockaddr_storage.ss_family... yes
+checking for struct sockaddr_storage.__ss_family... no
+checking for struct so_linger... no
+checking for socklen_t... yes
+checking whether our compiler supports __func__... yes
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... no
+checking whether pthreads work with -Kthread... no
+checking whether pthreads work with -kthread... no
+checking for the pthreads library -llthread... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+checking size of pthread_t... 8
+checking for library containing ERR_remove_thread_state... -lcrypto
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating libevent.pc
+config.status: creating libevent_openssl.pc
+config.status: creating libevent_pthreads.pc
+config.status: creating libevent_core.pc
+config.status: creating libevent_extra.pc
+config.status: creating Makefile
+config.status: creating config.h
+config.status: creating evconfig-private.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+  GEN      test/rpcgen-attempted
+  GEN      include/event2/event-config.h
+make  all-am
+make[1]: Entering directory `/svr-setup/libevent-release-2.1.8-stable'
+  CC       buffer.lo
+  CC       bufferevent.lo
+  CC       bufferevent_filter.lo
+  CC       bufferevent_pair.lo
+  CC       bufferevent_ratelim.lo
+  CC       bufferevent_sock.lo
+  CC       event.lo
+  CC       evmap.lo
+  CC       evthread.lo
+  CC       evutil.lo
+  CC       evutil_rand.lo
+  CC       evutil_time.lo
+  CC       listener.lo
+  CC       log.lo
+  CC       strlcpy.lo
+  CC       select.lo
+  CC       poll.lo
+  CC       epoll.lo
+  CC       signal.lo
+  CC       evdns.lo
+  CC       event_tagging.lo
+  CC       evrpc.lo
+  CC       http.lo
+  CC       evthread_pthread.lo
+  CC       libevent_openssl_la-bufferevent_openssl.lo
+  CCLD     libevent_core.la
+  CCLD     libevent_pthreads.la
+  CCLD     libevent_openssl.la
+  CC       sample/dns-example.o
+  CC       sample/event-read-fifo.o
+  CC       sample/hello-world.o
+  CC       sample/http-server.o
+  CC       sample/http-connect.o
+  CC       sample/signal-test.o
+  CC       sample/time-test.o
+  CC       sample/le-proxy.o
+  CC       sample/https-client.o
+  CC       sample/hostcheck.o
+  CC       sample/openssl_hostname_validation.o
+  CC       test/bench.o
+  CC       test/bench_cascade.o
+  CC       test/bench_http.o
+  CC       test/bench_httpclient.o
+  CC       test/test-changelist.o
+  CC       test/test-dumpevents.o
+  CC       test/test-eof.o
+  CC       test/test-closed.o
+  CC       test/test-fdleak.o
+  CC       test/test-init.o
+  CC       test/test-ratelim.o
+  CC       test/test-time.o
+  CC       test/test-weof.o
+  CC       test/test_regress-regress.o
+  CC       test/test_regress-regress.gen.o
+  CC       test/test_regress-regress_buffer.o
+  CC       test/test_regress-regress_bufferevent.o
+  CC       test/test_regress-regress_dns.o
+  CC       test/test_regress-regress_et.o
+  CC       test/test_regress-regress_finalize.o
+  CC       test/test_regress-regress_http.o
+  CC       test/test_regress-regress_listener.o
+  CC       test/test_regress-regress_main.o
+  CC       test/test_regress-regress_minheap.o
+  CC       test/test_regress-regress_rpc.o
+  CC       test/test_regress-regress_testutils.o
+  CC       test/test_regress-regress_util.o
+  CC       test/test_regress-tinytest.o
+  CC       test/test_regress-regress_thread.o
+  CC       test/test_regress-regress_zlib.o
+  CC       test/test_regress-regress_ssl.o
+  CCLD     libevent.la
+  CCLD     libevent_extra.la
+  CCLD     sample/dns-example
+  CCLD     sample/event-read-fifo
+  CCLD     sample/hello-world
+  CCLD     sample/http-server
+  CCLD     sample/http-connect
+  CCLD     sample/signal-test
+  CCLD     sample/time-test
+  CCLD     sample/le-proxy
+  CCLD     sample/https-client
+  CCLD     test/bench
+  CCLD     test/bench_cascade
+  CCLD     test/bench_http
+  CCLD     test/bench_httpclient
+  CCLD     test/test-changelist
+  CCLD     test/test-dumpevents
+  CCLD     test/test-eof
+  CCLD     test/test-closed
+  CCLD     test/test-fdleak
+  CCLD     test/test-init
+  CCLD     test/test-ratelim
+  CCLD     test/test-time
+  CCLD     test/test-weof
+  CCLD     test/regress
+make[1]: Leaving directory `/svr-setup/libevent-release-2.1.8-stable'
+make  install-am
+make[1]: Entering directory `/svr-setup/libevent-release-2.1.8-stable'
+make[2]: Entering directory `/svr-setup/libevent-release-2.1.8-stable'
+ /bin/mkdir -p '/usr/lib64/bin'
+ /bin/install -c event_rpcgen.py '/usr/lib64/bin'
+ /bin/mkdir -p '/usr/lib64/lib'
+ /bin/sh ./libtool   --mode=install /bin/install -c   libevent.la libevent_core.la libevent_extra.la libevent_pthreads.la libevent_openssl.la '/usr/lib64/lib'
+libtool: install: /bin/install -c .libs/libevent-2.1.so.6.0.2 /usr/lib64/lib/libevent-2.1.so.6.0.2
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent-2.1.so.6.0.2 libevent-2.1.so.6 || { rm -f libevent-2.1.so.6 && ln -s libevent-2.1.so.6.0.2 libevent-2.1.so.6; }; })
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent-2.1.so.6.0.2 libevent.so || { rm -f libevent.so && ln -s libevent-2.1.so.6.0.2 libevent.so; }; })
+libtool: install: /bin/install -c .libs/libevent.lai /usr/lib64/lib/libevent.la
+libtool: install: /bin/install -c .libs/libevent_core-2.1.so.6.0.2 /usr/lib64/lib/libevent_core-2.1.so.6.0.2
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent_core-2.1.so.6.0.2 libevent_core-2.1.so.6 || { rm -f libevent_core-2.1.so.6 && ln -s libevent_core-2.1.so.6.0.2 libevent_core-2.1.so.6; }; })
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent_core-2.1.so.6.0.2 libevent_core.so || { rm -f libevent_core.so && ln -s libevent_core-2.1.so.6.0.2 libevent_core.so; }; })
+libtool: install: /bin/install -c .libs/libevent_core.lai /usr/lib64/lib/libevent_core.la
+libtool: install: /bin/install -c .libs/libevent_extra-2.1.so.6.0.2 /usr/lib64/lib/libevent_extra-2.1.so.6.0.2
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent_extra-2.1.so.6.0.2 libevent_extra-2.1.so.6 || { rm -f libevent_extra-2.1.so.6 && ln -s libevent_extra-2.1.so.6.0.2 libevent_extra-2.1.so.6; }; })
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent_extra-2.1.so.6.0.2 libevent_extra.so || { rm -f libevent_extra.so && ln -s libevent_extra-2.1.so.6.0.2 libevent_extra.so; }; })
+libtool: install: /bin/install -c .libs/libevent_extra.lai /usr/lib64/lib/libevent_extra.la
+libtool: install: /bin/install -c .libs/libevent_pthreads-2.1.so.6.0.2 /usr/lib64/lib/libevent_pthreads-2.1.so.6.0.2
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent_pthreads-2.1.so.6.0.2 libevent_pthreads-2.1.so.6 || { rm -f libevent_pthreads-2.1.so.6 && ln -s libevent_pthreads-2.1.so.6.0.2 libevent_pthreads-2.1.so.6; }; })
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent_pthreads-2.1.so.6.0.2 libevent_pthreads.so || { rm -f libevent_pthreads.so && ln -s libevent_pthreads-2.1.so.6.0.2 libevent_pthreads.so; }; })
+libtool: install: /bin/install -c .libs/libevent_pthreads.lai /usr/lib64/lib/libevent_pthreads.la
+libtool: install: /bin/install -c .libs/libevent_openssl-2.1.so.6.0.2 /usr/lib64/lib/libevent_openssl-2.1.so.6.0.2
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent_openssl-2.1.so.6.0.2 libevent_openssl-2.1.so.6 || { rm -f libevent_openssl-2.1.so.6 && ln -s libevent_openssl-2.1.so.6.0.2 libevent_openssl-2.1.so.6; }; })
+libtool: install: (cd /usr/lib64/lib && { ln -s -f libevent_openssl-2.1.so.6.0.2 libevent_openssl.so || { rm -f libevent_openssl.so && ln -s libevent_openssl-2.1.so.6.0.2 libevent_openssl.so; }; })
+libtool: install: /bin/install -c .libs/libevent_openssl.lai /usr/lib64/lib/libevent_openssl.la
+libtool: install: /bin/install -c .libs/libevent.a /usr/lib64/lib/libevent.a
+libtool: install: chmod 644 /usr/lib64/lib/libevent.a
+libtool: install: ranlib /usr/lib64/lib/libevent.a
+libtool: install: /bin/install -c .libs/libevent_core.a /usr/lib64/lib/libevent_core.a
+libtool: install: chmod 644 /usr/lib64/lib/libevent_core.a
+libtool: install: ranlib /usr/lib64/lib/libevent_core.a
+libtool: install: /bin/install -c .libs/libevent_extra.a /usr/lib64/lib/libevent_extra.a
+libtool: install: chmod 644 /usr/lib64/lib/libevent_extra.a
+libtool: install: ranlib /usr/lib64/lib/libevent_extra.a
+libtool: install: /bin/install -c .libs/libevent_pthreads.a /usr/lib64/lib/libevent_pthreads.a
+libtool: install: chmod 644 /usr/lib64/lib/libevent_pthreads.a
+libtool: install: ranlib /usr/lib64/lib/libevent_pthreads.a
+libtool: install: /bin/install -c .libs/libevent_openssl.a /usr/lib64/lib/libevent_openssl.a
+libtool: install: chmod 644 /usr/lib64/lib/libevent_openssl.a
+libtool: install: ranlib /usr/lib64/lib/libevent_openssl.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/sbin" ldconfig -n /usr/lib64/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/lib64/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/lib64/include'
+ /bin/install -c -m 644 include/evdns.h include/event.h include/evhttp.h include/evrpc.h include/evutil.h '/usr/lib64/include'
+ /bin/mkdir -p '/usr/lib64/include/event2'
+ /bin/install -c -m 644 include/event2/buffer.h include/event2/buffer_compat.h include/event2/bufferevent.h include/event2/bufferevent_compat.h include/event2/bufferevent_ssl.h include/event2/bufferevent_struct.h include/event2/dns.h include/event2/dns_compat.h include/event2/dns_struct.h include/event2/event.h include/event2/event_compat.h include/event2/event_struct.h include/event2/http.h include/event2/http_compat.h include/event2/http_struct.h include/event2/keyvalq_struct.h include/event2/listener.h include/event2/rpc.h include/event2/rpc_compat.h include/event2/rpc_struct.h include/event2/tag.h include/event2/tag_compat.h include/event2/thread.h include/event2/util.h include/event2/visibility.h '/usr/lib64/include/event2'
+ /bin/mkdir -p '/usr/lib64/include/event2'
+ /bin/install -c -m 644 include/event2/event-config.h '/usr/lib64/include/event2'
+ /bin/mkdir -p '/usr/lib64/lib/pkgconfig'
+ /bin/install -c -m 644 libevent.pc libevent_core.pc libevent_extra.pc libevent_pthreads.pc libevent_openssl.pc '/usr/lib64/lib/pkgconfig'
+make[2]: Leaving directory `/svr-setup/libevent-release-2.1.8-stable'
+make[1]: Leaving directory `/svr-setup/libevent-release-2.1.8-stable'
+[1;32;40mCompiling memcached...
+(B[m/svr-setup/libevent-release-2.1.8-stable
+cd /svr-setup
+Making clean in doc
+make[1]: Entering directory `/svr-setup/memcached-1.5.12/doc'
+test -z "" || rm -f 
+make[1]: Leaving directory `/svr-setup/memcached-1.5.12/doc'
+make[1]: Entering directory `/svr-setup/memcached-1.5.12'
+test -z "memcached" || rm -f memcached
+test -z " " || rm -f  
+test -z "memcached-debug sizes testapp timedrun" || rm -f memcached-debug sizes testapp timedrun
+rm -f *.o
+test -z "*.gcov *.gcno *.gcda *.tcov" || rm -f *.gcov *.gcno *.gcda *.tcov
+make[1]: Leaving directory `/svr-setup/memcached-1.5.12'
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... ccache gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking whether ccache gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of ccache gcc... gcc3
+checking how to run the C preprocessor... ccache gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for icc in use... no
+checking for clang in use... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether __SUNPRO_C is declared... no
+checking for ccache gcc option to accept ISO C99... -std=gnu99
+checking sasl/sasl.h usability... yes
+checking sasl/sasl.h presence... yes
+checking for sasl/sasl.h... yes
+checking for SASL_CB_GETCONF... no
+checking for SASL_CB_GETCONFPATH... yes
+checking for library containing sasl_server_init... -lsasl2
+checking for gcov... /bin/gcov
+checking for main in -lgcov... yes
+checking for library containing clock_gettime... none required
+checking for library containing socket... none required
+checking for library containing gethostbyname... none required
+checking for libevent directory... /usr/lib64
+checking for library containing umem_cache_create... no
+checking for library containing gethugepagesizes... no
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for inttypes.h... (cached) yes
+checking for sasl_callback_ft... yes
+checking for print macros for integers (C99 section 7.8.1)... yes
+checking for an ANSI C-conforming const... yes
+checking for socklen_t... yes
+checking for endianness... little
+checking for htonll... no
+checking for library containing pthread_create... none required
+checking for mlockall... yes
+checking for getpagesizes... no
+checking for memcntl... no
+checking for sigignore... yes
+checking for clock_gettime... yes
+checking for accept4... yes
+checking for getopt_long... yes
+checking for alignment... none
+checking for GCC atomics... yes
+checking for GCC 64bit atomics... yes
+checking for setppriv... no
+checking for pledge... no
+checking umem.h usability... no
+checking umem.h presence... no
+checking for umem.h... no
+checking for xml2rfc... no
+checking for xsltproc... /bin/xsltproc
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+make  all-recursive
+make[1]: Entering directory `/svr-setup/memcached-1.5.12'
+Making all in doc
+make[2]: Entering directory `/svr-setup/memcached-1.5.12/doc'
+make  all-am
+make[3]: Entering directory `/svr-setup/memcached-1.5.12/doc'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/svr-setup/memcached-1.5.12/doc'
+make[2]: Leaving directory `/svr-setup/memcached-1.5.12/doc'
+make[2]: Entering directory `/svr-setup/memcached-1.5.12'
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-murmur3_hash.o -MD -MP -MF .deps/memcached-murmur3_hash.Tpo -c -o memcached-murmur3_hash.o `test -f 'murmur3_hash.c' || echo './'`murmur3_hash.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-bipbuffer.o -MD -MP -MF .deps/memcached-bipbuffer.Tpo -c -o memcached-bipbuffer.o `test -f 'bipbuffer.c' || echo './'`bipbuffer.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-logger.o -MD -MP -MF .deps/memcached-logger.Tpo -c -o memcached-logger.o `test -f 'logger.c' || echo './'`logger.c
+mv -f .deps/memcached-murmur3_hash.Tpo .deps/memcached-murmur3_hash.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-crawler.o -MD -MP -MF .deps/memcached-crawler.Tpo -c -o memcached-crawler.o `test -f 'crawler.c' || echo './'`crawler.c
+mv -f .deps/memcached-bipbuffer.Tpo .deps/memcached-bipbuffer.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-itoa_ljust.o -MD -MP -MF .deps/memcached-itoa_ljust.Tpo -c -o memcached-itoa_ljust.o `test -f 'itoa_ljust.c' || echo './'`itoa_ljust.c
+mv -f .deps/memcached-logger.Tpo .deps/memcached-logger.Po
+mv -f .deps/memcached-crawler.Tpo .deps/memcached-crawler.Po
+mv -f .deps/memcached-itoa_ljust.Tpo .deps/memcached-itoa_ljust.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-slab_automove.o -MD -MP -MF .deps/memcached-slab_automove.Tpo -c -o memcached-slab_automove.o `test -f 'slab_automove.c' || echo './'`slab_automove.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-cache.o -MD -MP -MF .deps/memcached-cache.Tpo -c -o memcached-cache.o `test -f 'cache.c' || echo './'`cache.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-sasl_defs.o -MD -MP -MF .deps/memcached-sasl_defs.Tpo -c -o memcached-sasl_defs.o `test -f 'sasl_defs.c' || echo './'`sasl_defs.c
+mv -f .deps/memcached-slab_automove.Tpo .deps/memcached-slab_automove.Po
+mv -f .deps/memcached-cache.Tpo .deps/memcached-cache.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-memcached.o -MD -MP -MF .deps/memcached_debug-memcached.Tpo -c -o memcached_debug-memcached.o `test -f 'memcached.c' || echo './'`memcached.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-hash.o -MD -MP -MF .deps/memcached_debug-hash.Tpo -c -o memcached_debug-hash.o `test -f 'hash.c' || echo './'`hash.c
+mv -f .deps/memcached-sasl_defs.Tpo .deps/memcached-sasl_defs.Po
+mv -f .deps/memcached_debug-hash.Tpo .deps/memcached_debug-hash.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-jenkins_hash.o -MD -MP -MF .deps/memcached_debug-jenkins_hash.Tpo -c -o memcached_debug-jenkins_hash.o `test -f 'jenkins_hash.c' || echo './'`jenkins_hash.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-murmur3_hash.o -MD -MP -MF .deps/memcached_debug-murmur3_hash.Tpo -c -o memcached_debug-murmur3_hash.o `test -f 'murmur3_hash.c' || echo './'`murmur3_hash.c
+mv -f .deps/memcached_debug-memcached.Tpo .deps/memcached_debug-memcached.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-slabs.o -MD -MP -MF .deps/memcached_debug-slabs.Tpo -c -o memcached_debug-slabs.o `test -f 'slabs.c' || echo './'`slabs.c
+mv -f .deps/memcached_debug-jenkins_hash.Tpo .deps/memcached_debug-jenkins_hash.Po
+mv -f .deps/memcached_debug-murmur3_hash.Tpo .deps/memcached_debug-murmur3_hash.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-items.o -MD -MP -MF .deps/memcached_debug-items.Tpo -c -o memcached_debug-items.o `test -f 'items.c' || echo './'`items.c
+mv -f .deps/memcached_debug-slabs.Tpo .deps/memcached_debug-slabs.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-assoc.o -MD -MP -MF .deps/memcached_debug-assoc.Tpo -c -o memcached_debug-assoc.o `test -f 'assoc.c' || echo './'`assoc.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-thread.o -MD -MP -MF .deps/memcached_debug-thread.Tpo -c -o memcached_debug-thread.o `test -f 'thread.c' || echo './'`thread.c
+mv -f .deps/memcached_debug-items.Tpo .deps/memcached_debug-items.Po
+mv -f .deps/memcached_debug-assoc.Tpo .deps/memcached_debug-assoc.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-daemon.o -MD -MP -MF .deps/memcached_debug-daemon.Tpo -c -o memcached_debug-daemon.o `test -f 'daemon.c' || echo './'`daemon.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-stats.o -MD -MP -MF .deps/memcached_debug-stats.Tpo -c -o memcached_debug-stats.o `test -f 'stats.c' || echo './'`stats.c
+mv -f .deps/memcached_debug-thread.Tpo .deps/memcached_debug-thread.Po
+mv -f .deps/memcached_debug-daemon.Tpo .deps/memcached_debug-daemon.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-util.o -MD -MP -MF .deps/memcached_debug-util.Tpo -c -o memcached_debug-util.o `test -f 'util.c' || echo './'`util.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-bipbuffer.o -MD -MP -MF .deps/memcached_debug-bipbuffer.Tpo -c -o memcached_debug-bipbuffer.o `test -f 'bipbuffer.c' || echo './'`bipbuffer.c
+mv -f .deps/memcached_debug-stats.Tpo .deps/memcached_debug-stats.Po
+mv -f .deps/memcached_debug-util.Tpo .deps/memcached_debug-util.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-logger.o -MD -MP -MF .deps/memcached_debug-logger.Tpo -c -o memcached_debug-logger.o `test -f 'logger.c' || echo './'`logger.c
+mv -f .deps/memcached_debug-bipbuffer.Tpo .deps/memcached_debug-bipbuffer.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-crawler.o -MD -MP -MF .deps/memcached_debug-crawler.Tpo -c -o memcached_debug-crawler.o `test -f 'crawler.c' || echo './'`crawler.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-itoa_ljust.o -MD -MP -MF .deps/memcached_debug-itoa_ljust.Tpo -c -o memcached_debug-itoa_ljust.o `test -f 'itoa_ljust.c' || echo './'`itoa_ljust.c
+mv -f .deps/memcached_debug-logger.Tpo .deps/memcached_debug-logger.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-slab_automove.o -MD -MP -MF .deps/memcached_debug-slab_automove.Tpo -c -o memcached_debug-slab_automove.o `test -f 'slab_automove.c' || echo './'`slab_automove.c
+mv -f .deps/memcached_debug-crawler.Tpo .deps/memcached_debug-crawler.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-cache.o -MD -MP -MF .deps/memcached_debug-cache.Tpo -c -o memcached_debug-cache.o `test -f 'cache.c' || echo './'`cache.c
+mv -f .deps/memcached_debug-itoa_ljust.Tpo .deps/memcached_debug-itoa_ljust.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include  -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached_debug-sasl_defs.o -MD -MP -MF .deps/memcached_debug-sasl_defs.Tpo -c -o memcached_debug-sasl_defs.o `test -f 'sasl_defs.c' || echo './'`sasl_defs.c
+mv -f .deps/memcached_debug-slab_automove.Tpo .deps/memcached_debug-slab_automove.Po
+mv -f .deps/memcached_debug-cache.Tpo .deps/memcached_debug-cache.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT sizes.o -MD -MP -MF .deps/sizes.Tpo -c -o sizes.o sizes.c
+mv -f .deps/memcached_debug-sasl_defs.Tpo .deps/memcached_debug-sasl_defs.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT testapp.o -MD -MP -MF .deps/testapp.Tpo -c -o testapp.o testapp.c
+mv -f .deps/sizes.Tpo .deps/sizes.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT util.o -MD -MP -MF .deps/util.Tpo -c -o util.o util.c
+mv -f .deps/testapp.Tpo .deps/testapp.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT cache.o -MD -MP -MF .deps/cache.Tpo -c -o cache.o cache.c
+mv -f .deps/util.Tpo .deps/util.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.   -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT timedrun.o -MD -MP -MF .deps/timedrun.Tpo -c -o timedrun.o timedrun.c
+mv -f .deps/cache.Tpo .deps/cache.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-memcached.o -MD -MP -MF .deps/memcached-memcached.Tpo -c -o memcached-memcached.o `test -f 'memcached.c' || echo './'`memcached.c
+mv -f .deps/timedrun.Tpo .deps/timedrun.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-hash.o -MD -MP -MF .deps/memcached-hash.Tpo -c -o memcached-hash.o `test -f 'hash.c' || echo './'`hash.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-jenkins_hash.o -MD -MP -MF .deps/memcached-jenkins_hash.Tpo -c -o memcached-jenkins_hash.o `test -f 'jenkins_hash.c' || echo './'`jenkins_hash.c
+mv -f .deps/memcached-hash.Tpo .deps/memcached-hash.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-slabs.o -MD -MP -MF .deps/memcached-slabs.Tpo -c -o memcached-slabs.o `test -f 'slabs.c' || echo './'`slabs.c
+mv -f .deps/memcached-memcached.Tpo .deps/memcached-memcached.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-items.o -MD -MP -MF .deps/memcached-items.Tpo -c -o memcached-items.o `test -f 'items.c' || echo './'`items.c
+mv -f .deps/memcached-jenkins_hash.Tpo .deps/memcached-jenkins_hash.Po
+mv -f .deps/memcached-slabs.Tpo .deps/memcached-slabs.Po
+mv -f .deps/memcached-items.Tpo .deps/memcached-items.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-assoc.o -MD -MP -MF .deps/memcached-assoc.Tpo -c -o memcached-assoc.o `test -f 'assoc.c' || echo './'`assoc.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-thread.o -MD -MP -MF .deps/memcached-thread.Tpo -c -o memcached-thread.o `test -f 'thread.c' || echo './'`thread.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-daemon.o -MD -MP -MF .deps/memcached-daemon.Tpo -c -o memcached-daemon.o `test -f 'daemon.c' || echo './'`daemon.c
+mv -f .deps/memcached-assoc.Tpo .deps/memcached-assoc.Po
+mv -f .deps/memcached-thread.Tpo .deps/memcached-thread.Po
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-stats.o -MD -MP -MF .deps/memcached-stats.Tpo -c -o memcached-stats.o `test -f 'stats.c' || echo './'`stats.c
+ccache gcc -std=gnu99 -DHAVE_CONFIG_H -I.  -DNDEBUG -I/usr/lib64/include   -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -MT memcached-util.o -MD -MP -MF .deps/memcached-util.Tpo -c -o memcached-util.o `test -f 'util.c' || echo './'`util.c
+mv -f .deps/memcached-daemon.Tpo .deps/memcached-daemon.Po
+ccache gcc -std=gnu99 -fprofile-arcs -ftest-coverage -DMEMCACHED_DEBUG -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls  -L/usr/lib64/lib  -Wl,-rpath,/usr/lib64/lib -o memcached-debug memcached_debug-memcached.o memcached_debug-hash.o memcached_debug-jenkins_hash.o memcached_debug-murmur3_hash.o memcached_debug-slabs.o memcached_debug-items.o memcached_debug-assoc.o memcached_debug-thread.o memcached_debug-daemon.o memcached_debug-stats.o memcached_debug-util.o memcached_debug-bipbuffer.o memcached_debug-logger.o memcached_debug-crawler.o memcached_debug-itoa_ljust.o memcached_debug-slab_automove.o memcached_debug-cache.o    memcached_debug-sasl_defs.o  -lgcov   -levent -lsasl2 
+mv -f .deps/memcached-stats.Tpo .deps/memcached-stats.Po
+ccache gcc -std=gnu99  -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls  -L/usr/lib64/lib  -Wl,-rpath,/usr/lib64/lib -o sizes sizes.o  -levent -lsasl2 
+mv -f .deps/memcached-util.Tpo .deps/memcached-util.Po
+ccache gcc -std=gnu99  -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls  -L/usr/lib64/lib  -Wl,-rpath,/usr/lib64/lib -o testapp testapp.o util.o cache.o  -levent -lsasl2 
+ccache gcc -std=gnu99  -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls  -L/usr/lib64/lib  -Wl,-rpath,/usr/lib64/lib -o timedrun timedrun.o  -levent -lsasl2 
+ccache gcc -std=gnu99  -g -O2 -pthread -pthread -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls  -L/usr/lib64/lib  -Wl,-rpath,/usr/lib64/lib -o memcached memcached-memcached.o memcached-hash.o memcached-jenkins_hash.o memcached-murmur3_hash.o memcached-slabs.o memcached-items.o memcached-assoc.o memcached-thread.o memcached-daemon.o memcached-stats.o memcached-util.o memcached-bipbuffer.o memcached-logger.o memcached-crawler.o memcached-itoa_ljust.o memcached-slab_automove.o memcached-cache.o    memcached-sasl_defs.o    -levent -lsasl2 
+make[2]: Leaving directory `/svr-setup/memcached-1.5.12'
+make[1]: Leaving directory `/svr-setup/memcached-1.5.12'
+make  install-recursive
+make[1]: Entering directory `/svr-setup/memcached-1.5.12'
+Making install in doc
+make[2]: Entering directory `/svr-setup/memcached-1.5.12/doc'
+make  install-am
+make[3]: Entering directory `/svr-setup/memcached-1.5.12/doc'
+make[4]: Entering directory `/svr-setup/memcached-1.5.12/doc'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/usr/local/share/man/man1'
+ /bin/install -c -m 644 memcached.1 '/usr/local/share/man/man1'
+make[4]: Leaving directory `/svr-setup/memcached-1.5.12/doc'
+make[3]: Leaving directory `/svr-setup/memcached-1.5.12/doc'
+make[2]: Leaving directory `/svr-setup/memcached-1.5.12/doc'
+make[2]: Entering directory `/svr-setup/memcached-1.5.12'
+make[3]: Entering directory `/svr-setup/memcached-1.5.12'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/install -c memcached '/usr/local/bin'
+ /bin/mkdir -p '/usr/local/include/memcached'
+ /bin/install -c -m 644 protocol_binary.h '/usr/local/include/memcached'
+make[3]: Leaving directory `/svr-setup/memcached-1.5.12'
+make[2]: Leaving directory `/svr-setup/memcached-1.5.12'
+make[1]: Leaving directory `/svr-setup/memcached-1.5.12'
+[1;32;40mCompiled memcached...
+(B[mMemcached server stopped 
+Memcached server started 
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so' (tried: /usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so (/usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so: cannot open shared object file: No such file or directory), /usr/local/lib/php/extensions/no-debug-non-zts-20180731//usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so.so (/usr/local/lib/php/extensions/no-debug-non-zts-20180731//usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+
+Compiling memcache PHP extension for PHP 7.x ...
+/svr-setup /svr-setup/memcached-1.5.12
+Cloning into 'memcache-php7'...
+
+real	0m3.185s
+user	0m0.137s
+sys	0m0.101s
+make: *** No rule to make target `clean'.  Stop.
+--2019-03-02 05:29:20--  https://patch-diff.githubusercontent.com/raw/websupport-sk/pecl-memcache/pull/30.patch
+Resolving patch-diff.githubusercontent.com... 13.229.188.59, 13.250.177.223, 52.74.223.119
+Connecting to patch-diff.githubusercontent.com|13.229.188.59|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Cookie coming from patch-diff.githubusercontent.com attempted to set domain to github.com
+Length: unspecified [text/plain]
+Saving to: ‘memcache-php73.patch’
+
+     0K .......                                                47.9M=0s
+
+2019-03-02 05:29:21 (47.9 MB/s) - ‘memcache-php73.patch’ saved [7466]
+
+patching file php7/memcache.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+4 out of 4 hunks ignored -- saving rejects to file php7/memcache.c.rej
+patching file php7/memcache_binary_protocol.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+5 out of 5 hunks ignored -- saving rejects to file php7/memcache_binary_protocol.c.rej
+patching file php7/memcache_pool.c
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+2 out of 2 hunks ignored -- saving rejects to file php7/memcache_pool.c.rej
+patching file php7/memcache_session.c
+Hunk #1 FAILED at 102.
+Hunk #2 FAILED at 132.
+Hunk #3 FAILED at 158.
+3 out of 3 hunks FAILED -- saving rejects to file php7/memcache_session.c.rej
+patching file php7/memcache_pool.c
+Configuring for:
+PHP Api Version:         20180731
+Zend Module Api No:      20180731
+Zend Extension Api No:   320180731
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for a sed that does not truncate output... /bin/sed
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... ccache gcc -E
+checking for icc... no
+checking for suncc... no
+checking whether ccache gcc and cc understand -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for PHP prefix... /usr/local
+checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20180731
+checking for PHP installed headers prefix... /usr/local/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.14.3 (ok)
+checking for gawk... gawk
+checking whether to enable memcache support... yes, shared
+checking whether to enable memcache session handler support... yes
+checking for the location of ZLIB... no
+checking for the location of zlib... /usr
+checking PHP version... PHP 7.x
+checking for session includes... /usr/local/include/php
+checking for memcache session support... enabled
+checking for ld used by ccache gcc... /bin/ld
+checking if the linker (/bin/ld) is GNU ld... yes
+checking for /bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /bin/nm -B
+checking whether ln -s works... yes
+checking how to recognize dependent libraries... pass_all
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking the maximum length of command line arguments... 1572864
+checking command to parse /bin/nm -B output from ccache gcc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if ccache gcc supports -fno-rtti -fno-exceptions... no
+checking for ccache gcc option to produce PIC... -fPIC
+checking if ccache gcc PIC flag -fPIC works... yes
+checking if ccache gcc static flag -static works... no
+checking if ccache gcc supports -c -o file.o... yes
+checking whether the ccache gcc linker (/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+
+creating libtool
+appending configuration tag "CXX" to libtool
+checking whether the ccache g++ linker (/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for ccache g++ option to produce PIC... 
+checking if ccache g++ static flag  works... yes
+checking if ccache g++ supports -c -o file.o... yes
+checking whether the ccache g++ linker (/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+(cached) (cached) checking how to hardcode library paths into programs... unsupported
+configure: creating ./config.status
+config.status: creating config.h
+/bin/sh /svr-setup/memcache-php7/libtool --mode=compile ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /svr-setup/memcache-php7/php7/memcache.c -o php7/memcache.lo 
+/bin/sh /svr-setup/memcache-php7/libtool --mode=compile ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /svr-setup/memcache-php7/php7/memcache_pool.c -o php7/memcache_pool.lo 
+/bin/sh /svr-setup/memcache-php7/libtool --mode=compile ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /svr-setup/memcache-php7/php7/memcache_queue.c -o php7/memcache_queue.lo 
+mkdir php7/.libs
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /svr-setup/memcache-php7/php7/memcache.c  -fPIC -DPIC -o php7/.libs/memcache.o
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /svr-setup/memcache-php7/php7/memcache_pool.c  -fPIC -DPIC -o php7/.libs/memcache_pool.o
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /svr-setup/memcache-php7/php7/memcache_queue.c  -fPIC -DPIC -o php7/.libs/memcache_queue.o
+/bin/sh /svr-setup/memcache-php7/libtool --mode=compile ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /svr-setup/memcache-php7/php7/memcache_ascii_protocol.c -o php7/memcache_ascii_protocol.lo 
+/svr-setup/memcache-php7/php7/memcache.c: In function ‘php_mmc_store’:
+/svr-setup/memcache-php7/php7/memcache.c:643:4: error: too many arguments to function ‘mmc_prepare_key_ex’
+    if (mmc_prepare_key_ex(ZSTR_VAL(key), ZSTR_LEN(key), request->key, &(request->key_len), MEMCACHE_G(key_prefix)) != MMC_OK) {
+    ^
+In file included from /svr-setup/memcache-php7/php7/php_memcache.h:34:0,
+                 from /svr-setup/memcache-php7/php7/memcache.c:30:
+/svr-setup/memcache-php7/php7/memcache_pool.h:399:5: note: declared here
+ int mmc_prepare_key_ex(const char *, unsigned int, char *, unsigned int *);
+     ^
+make: *** [php7/memcache.lo] Error 1
+make: *** Waiting for unfinished jobs....
+/svr-setup/memcache-php7/php7/memcache_pool.c:1650:21: error: conflicting types for ‘mmc_prepare_key_ex’
+ MMC_POOL_INLINE int mmc_prepare_key_ex(const char *key, unsigned int key_len, char *result, unsigned int *result_len, char *prefix)  /* {{{ */
+                     ^
+In file included from /svr-setup/memcache-php7/php7/memcache_pool.c:40:0:
+/svr-setup/memcache-php7/php7/memcache_pool.h:399:5: note: previous declaration of ‘mmc_prepare_key_ex’ was here
+ int mmc_prepare_key_ex(const char *, unsigned int, char *, unsigned int *);
+     ^
+make: *** [php7/memcache_pool.lo] Error 1
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /svr-setup/memcache-php7/php7/memcache_ascii_protocol.c  -fPIC -DPIC -o php7/.libs/memcache_ascii_protocol.o
+/bin/sh /svr-setup/memcache-php7/libtool --mode=compile ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /svr-setup/memcache-php7/php7/memcache.c -o php7/memcache.lo 
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcache-php7 -DPHP_ATOM_INC -I/svr-setup/memcache-php7/include -I/svr-setup/memcache-php7/main -I/svr-setup/memcache-php7 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /svr-setup/memcache-php7/php7/memcache.c  -fPIC -DPIC -o php7/.libs/memcache.o
+/svr-setup/memcache-php7/php7/memcache.c: In function ‘php_mmc_store’:
+/svr-setup/memcache-php7/php7/memcache.c:643:4: error: too many arguments to function ‘mmc_prepare_key_ex’
+    if (mmc_prepare_key_ex(ZSTR_VAL(key), ZSTR_LEN(key), request->key, &(request->key_len), MEMCACHE_G(key_prefix)) != MMC_OK) {
+    ^
+In file included from /svr-setup/memcache-php7/php7/php_memcache.h:34:0,
+                 from /svr-setup/memcache-php7/php7/memcache.c:30:
+/svr-setup/memcache-php7/php7/memcache_pool.h:399:5: note: declared here
+ int mmc_prepare_key_ex(const char *, unsigned int, char *, unsigned int *);
+     ^
+make: *** [php7/memcache.lo] Error 1
+/svr-setup/memcached-1.5.12
+[1;32;40mInstalling libmemcached via CentOS base YUM repo ...
+(B[mPackage libmemcached-1.0.16-5.el7.x86_64 already installed and latest version
+Package libmemcached-devel-1.0.16-5.el7.x86_64 already installed and latest version
+[1;32;40mCompiling PHP memcached-2.2.0 extension...
+(B[m/svr-setup/memcached-1.5.12
+cd /svr-setup
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so' (tried: /usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so (/usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so: cannot open shared object file: No such file or directory), /usr/local/lib/php/extensions/no-debug-non-zts-20180731//usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so.so (/usr/local/lib/php/extensions/no-debug-non-zts-20180731//usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+7.3
+0
+
+compiling memcached PHP extension for PHP 7.x ...
+PHPMUVER = 
+find . -name \*.gcno -o -name \*.gcda | xargs rm -f
+find . -name \*.lo -o -name \*.o | xargs rm -f
+find . -name \*.la -o -name \*.a | xargs rm -f
+find . -name \*.so | xargs rm -f
+find . -name .libs -a -type d|xargs rm -rf
+rm -f libphp.la      modules/* libs/*
+Configuring for:
+PHP Api Version:         20180731
+Zend Module Api No:      20180731
+Zend Extension Api No:   320180731
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for a sed that does not truncate output... /bin/sed
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... ccache gcc -E
+checking for icc... no
+checking for suncc... no
+checking whether ccache gcc and cc understand -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for PHP prefix... /usr/local
+checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20180731
+checking for PHP installed headers prefix... /usr/local/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.14.3 (ok)
+checking for gawk... gawk
+checking whether to enable memcached support... yes, shared
+checking for libmemcached... yes, shared
+checking whether to enable memcached session handler support... yes
+checking whether to enable memcached igbinary serializer support... no
+checking whether to enable memcached json serializer support... yes
+checking whether to enable memcached msgpack serializer support... no
+checking whether to enable memcached sasl support... yes
+checking whether to enable memcached protocol support... no
+checking whether to use system FastLZ library... no
+checking for ZLIB... yes, shared
+checking for pkg-config... /bin/pkg-config
+checking for zlib location... /usr
+checking for session includes... /usr/local/include/php
+checking for json includes... /usr/local/include/php
+checking for memcached session support... enabled
+checking for memcached igbinary support... disabled
+checking for memcached msgpack support... disabled
+checking for libmemcached location... found version 1.0.16, under /usr
+checking for libmemcached sasl.h requirement... yes
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking sasl/sasl.h usability... yes
+checking sasl/sasl.h presence... yes
+checking for sasl/sasl.h... yes
+checking whether to enable sasl support... yes
+checking for sasl_client_init in -lsasl2... yes
+checking whether memcached_exist is defined... yes
+checking whether memcached_set_encoding_key is defined... yes
+checking for memcached protocol support... disabled
+checking for ld used by ccache gcc... /bin/ld
+checking if the linker (/bin/ld) is GNU ld... yes
+checking for /bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /bin/nm -B
+checking whether ln -s works... yes
+checking how to recognize dependent libraries... pass_all
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking the maximum length of command line arguments... 1572864
+checking command to parse /bin/nm -B output from ccache gcc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if ccache gcc supports -fno-rtti -fno-exceptions... no
+checking for ccache gcc option to produce PIC... -fPIC
+checking if ccache gcc PIC flag -fPIC works... yes
+checking if ccache gcc static flag -static works... no
+checking if ccache gcc supports -c -o file.o... yes
+checking whether the ccache gcc linker (/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+
+creating libtool
+appending configuration tag "CXX" to libtool
+checking whether the ccache g++ linker (/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for ccache g++ option to produce PIC... 
+checking if ccache g++ static flag  works... yes
+checking if ccache g++ supports -c -o file.o... yes
+checking whether the ccache g++ linker (/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+(cached) (cached) checking how to hardcode library paths into programs... unsupported
+configure: creating ./config.status
+config.status: creating config.h
+config.status: config.h is unchanged
+/bin/sh /svr-setup/memcached-3.1.3/libtool --mode=compile ccache gcc -I/usr/local/include/php    -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib   -c /svr-setup/memcached-3.1.3/php_memcached.c -o php_memcached.lo 
+/bin/sh /svr-setup/memcached-3.1.3/libtool --mode=compile ccache gcc -I/usr/local/include/php    -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib   -c /svr-setup/memcached-3.1.3/php_libmemcached_compat.c -o php_libmemcached_compat.lo 
+/bin/sh /svr-setup/memcached-3.1.3/libtool --mode=compile ccache gcc -I/usr/local/include/php    -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib   -c /svr-setup/memcached-3.1.3/g_fmt.c -o g_fmt.lo 
+mkdir .libs
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -c /svr-setup/memcached-3.1.3/g_fmt.c  -fPIC -DPIC -o .libs/g_fmt.o
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -c /svr-setup/memcached-3.1.3/php_libmemcached_compat.c  -fPIC -DPIC -o .libs/php_libmemcached_compat.o
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -c /svr-setup/memcached-3.1.3/php_memcached.c  -fPIC -DPIC -o .libs/php_memcached.o
+/bin/sh /svr-setup/memcached-3.1.3/libtool --mode=compile ccache gcc -I/usr/local/include/php    -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib   -c /svr-setup/memcached-3.1.3/fastlz/fastlz.c -o fastlz/fastlz.lo 
+/bin/sh /svr-setup/memcached-3.1.3/libtool --mode=compile ccache gcc -I/usr/local/include/php    -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib   -c /svr-setup/memcached-3.1.3/php_memcached_session.c -o php_memcached_session.lo 
+mkdir fastlz/.libs
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -c /svr-setup/memcached-3.1.3/fastlz/fastlz.c  -fPIC -DPIC -o fastlz/.libs/fastlz.o
+ ccache gcc -I/usr/local/include/php -I. -I/svr-setup/memcached-3.1.3 -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -c /svr-setup/memcached-3.1.3/php_memcached_session.c  -fPIC -DPIC -o .libs/php_memcached_session.o
+/bin/sh /svr-setup/memcached-3.1.3/libtool --mode=link ccache gcc -DPHP_ATOM_INC -I/svr-setup/memcached-3.1.3/include -I/svr-setup/memcached-3.1.3/main -I/svr-setup/memcached-3.1.3 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2 -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib   -o memcached.la -export-dynamic -avoid-version -prefer-pic -module -rpath /svr-setup/memcached-3.1.3/modules  php_memcached.lo php_libmemcached_compat.lo g_fmt.lo fastlz/fastlz.lo php_memcached_session.lo -lz -lmemcached -lmemcachedutil -lsasl2
+ccache gcc -shared  .libs/php_memcached.o .libs/php_libmemcached_compat.o .libs/g_fmt.o fastlz/.libs/fastlz.o .libs/php_memcached_session.o  -lz -lmemcached -lmemcachedutil -lsasl2  -Wl,-soname -Wl,memcached.so -o .libs/memcached.so
+creating memcached.la
+(cd .libs && rm -f memcached.la && ln -s ../memcached.la memcached.la)
+/bin/sh /svr-setup/memcached-3.1.3/libtool --mode=install cp ./memcached.la /svr-setup/memcached-3.1.3/modules
+cp ./.libs/memcached.so /svr-setup/memcached-3.1.3/modules/memcached.so
+cp ./.libs/memcached.lai /svr-setup/memcached-3.1.3/modules/memcached.la
+PATH="$PATH:/sbin" ldconfig -n /svr-setup/memcached-3.1.3/modules
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /svr-setup/memcached-3.1.3/modules
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+
+Build complete.
+Don't forget to run 'make test'.
+
+Installing shared extensions:     /usr/local/lib/php/extensions/no-debug-non-zts-20180731/
+Memcached server stopped 
+Memcached server started 
+Gracefully shutting down php-fpm  done
+Starting php-fpm [02-Mar-2019 05:29:31] NOTICE: PHP message: PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so' (tried: /usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so (/usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so: cannot open shared object file: No such file or directory), /usr/local/lib/php/extensions/no-debug-non-zts-20180731//usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so.so (/usr/local/lib/php/extensions/no-debug-non-zts-20180731//usr/local/lib/php/extensions/no-debug-non-zts-20180731/memcache.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+ done
+
+Total Memcached Re-Install Time: 40.722094412 seconds
